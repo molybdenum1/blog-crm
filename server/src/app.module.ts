@@ -8,7 +8,7 @@ const postgresLocal: TypeOrmModuleOptions = {
   port: 5432,
   username: 'postgres',
   password: '1312',
-  database: 'blog_db',
+  database: 'blog_crm_db',
   entities: ['dist/**/*.entity{.ts,.js}'],
   synchronize: true,
 };
