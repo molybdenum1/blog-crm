@@ -1,6 +1,8 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { PostModule } from './post/post.module';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 const postgresLocal: TypeOrmModuleOptions = {
   type: 'postgres',
@@ -14,7 +16,12 @@ const postgresLocal: TypeOrmModuleOptions = {
 };
 
 @Module({
-  imports: [TypeOrmModule.forRoot(postgresLocal), PostModule],
+  imports: [
+    TypeOrmModule.forRoot(postgresLocal),
+    PostModule,
+    UserModule,
+    AuthModule,
+  ],
   controllers: [],
 })
 export class AppModule {}
